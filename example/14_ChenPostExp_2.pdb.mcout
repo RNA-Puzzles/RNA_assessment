@@ -1,0 +1,132 @@
+Residue conformations -------------------------------------------
+U1 : C C3p_endo anti
+U2 : G C3p_endo anti
+U3 : U C3p_endo anti
+U4 : U C3p_endo anti
+U5 : G C3p_endo anti
+U6 : A C3p_endo anti
+U7 : C C3p_endo anti
+U8 : C C3p_endo anti
+U9 : C C3p_endo anti
+U10 : A C3p_endo anti
+U11 : G C3p_endo anti
+U12 : G C3p_endo anti
+U13 : A C3p_endo anti
+U14 : A C3p_endo anti
+U15 : A C3p_endo anti
+U16 : C C3p_endo anti
+U17 : U C3p_endo anti
+U18 : G C3p_endo anti
+U19 : G C3p_endo anti
+U20 : G C3p_endo anti
+U21 : C C3p_endo anti
+U22 : G C3p_endo anti
+U23 : G C4p_exo anti
+U24 : A C2p_exo anti
+U25 : A C3p_exo anti
+U26 : G C2p_exo anti
+U27 : U C3p_endo anti
+U28 : A C3p_endo anti
+U29 : A C3p_endo anti
+U30 : G C3p_endo anti
+U31 : G C3p_endo anti
+U32 : C C4p_exo anti
+U33 : C C3p_endo anti
+U34 : C C3p_endo anti
+U35 : A C3p_endo anti
+U36 : U C3p_endo anti
+U37 : U C2p_endo anti
+U38 : G C3p_endo syn
+U39 : C C2p_endo anti
+U40 : A C3p_endo anti
+U41 : C C2p_exo anti
+U42 : U C3p_endo anti
+U43 : C C3p_endo anti
+U44 : C C3p_endo anti
+U45 : G C3p_endo anti
+U46 : G C3p_endo anti
+U47 : G C3p_endo anti
+U48 : C C3p_endo anti
+U49 : C C3p_endo anti
+U50 : U C4p_exo anti
+U51 : G C2p_exo anti
+U52 : A C3p_endo anti
+U53 : A C3p_endo anti
+U54 : G C2p_exo anti
+U55 : C C3p_endo anti
+U56 : A C3p_endo anti
+U57 : A C3p_endo anti
+U58 : C C3p_endo anti
+U59 : G C3p_endo anti
+U60 : C O4p_endo anti
+U61 : G C3p_exo anti
+Adjacent stackings ----------------------------------------------
+U1-U2 : adjacent_5p upward 
+U2-U3 : adjacent_5p upward 
+U3-U4 : adjacent_5p upward 
+U4-U5 : adjacent_5p upward 
+U5-U6 : adjacent_5p upward 
+U6-U7 : adjacent_5p upward 
+U8-U9 : adjacent_5p upward 
+U9-U10 : adjacent_5p upward 
+U10-U11 : adjacent_5p upward 
+U11-U12 : adjacent_5p upward 
+U13-U14 : adjacent_5p upward 
+U14-U15 : adjacent_5p upward 
+U16-U17 : adjacent_5p upward 
+U18-U19 : adjacent_5p upward 
+U19-U20 : adjacent_5p upward 
+U20-U21 : adjacent_5p upward 
+U28-U29 : adjacent_5p upward 
+U29-U30 : adjacent_5p upward 
+U30-U31 : adjacent_5p upward 
+U31-U32 : adjacent_5p upward 
+U33-U34 : adjacent_5p upward 
+U34-U35 : adjacent_5p upward 
+U35-U36 : adjacent_5p upward 
+U40-U41 : adjacent_5p upward 
+U42-U43 : adjacent_5p upward 
+U45-U46 : adjacent_5p upward 
+U46-U47 : adjacent_5p upward 
+U48-U49 : adjacent_5p upward 
+U49-U50 : adjacent_5p upward 
+U50-U51 : adjacent_5p upward 
+U51-U52 : adjacent_5p upward 
+U53-U54 : adjacent_5p upward 
+U56-U57 : adjacent_5p upward 
+U57-U58 : adjacent_5p upward 
+U58-U59 : adjacent_5p upward 
+U60-U61 : adjacent_5p inward 
+Non-Adjacent stackings ------------------------------------------
+U2-U59 : outward 
+U5-U56 : outward 
+U6-U55 : outward 
+U10-U18 : outward 
+Number of stackings = 40
+Number of adjacent stackings = 36
+Number of non adjacent stackings = 4
+Base-pairs ------------------------------------------------------
+U1-U59 : C-G Ww/Ww pairing antiparallel cis XIX 
+U2-U58 : G-C Ww/Ww pairing antiparallel cis XIX 
+U3-U57 : U-A Ww/Ww pairing antiparallel cis XX 
+U4-U56 : U-A Ww/Ww pairing antiparallel cis XX 
+U5-U55 : G-C Ww/Ww pairing antiparallel cis XIX 
+U7-U20 : C-G Ww/Ww pairing antiparallel cis XIX 
+U8-U19 : C-G Ww/Ww pairing antiparallel cis XIX 
+U9-U18 : C-G Ww/Ww pairing antiparallel cis XIX 
+U10-U17 : A-U Ww/Ww pairing antiparallel cis XX 
+U11-U16 : G-C Ww/Ww pairing antiparallel cis XIX 
+U12-U14 : G-A O2'/Hh pairing 
+U12-U15 : G-A Ss/Hh pairing antiparallel trans XI 
+U20-U54 : G-G Ss/Ss O2'/Ww O2'/Bs pairing parallel trans IV 
+U26-U28 : G-A O2P/Bh pairing 
+U26-U49 : G-C O2P/Bh pairing 
+U27-U28 : U-A O2P/Bh adjacent_5p pairing 
+U28-U51 : A-G Ww/Ws pairing antiparallel cis one_hbond 
+U29-U50 : A-U Ww/Ww pairing antiparallel cis XX 
+U30-U49 : G-C Ws/Ww pairing antiparallel cis one_hbond 
+U31-U48 : G-C Ww/Ww pairing antiparallel cis XIX 
+U32-U47 : C-G Ww/Ww pairing antiparallel cis XIX 
+U33-U46 : C-G Ww/Ww pairing antiparallel cis XIX 
+U34-U45 : C-G Ww/Ww pairing antiparallel cis XIX 
+U41-U43 : C-C O2P/Bh pairing 
