@@ -21,7 +21,7 @@
 
 import sys,os
 
-import pdb_utils
+import RNA_normalier as pdb_utils
 import utils
 import extract
 
