@@ -23,7 +23,7 @@ Please download the binary excution from the website and coordinate the director
  
 
 ## how to use
-A detailed introduction can be found in the example [notebook](https://github.com/RNA-Puzzles/BasicAssessMetrics/blob/master/example.ipynb) or the example [script](https://github.com/RNA-Puzzles/BasicAssessMetrics/blob/master/example.py). 
+A detailed introduction can be found in the example [notebook](https://github.com/RNA-Puzzles/RNA_assessment/blob/master/example.ipynb) or the example [script](https://github.com/RNA-Puzzles/RNA_assessment/blob/master/example/example.py). 
 
 ## citation
 Hajdin et al., RNA (7) 16, 2010  
