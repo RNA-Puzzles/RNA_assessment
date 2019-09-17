@@ -1,0 +1,14 @@
+README.md
+setup.py
+RNA_normalizer/__init__.py
+RNA_normalizer/extract.py
+RNA_normalizer/fit.py
+RNA_normalizer/mcannotate.py
+RNA_normalizer/msgs.py
+RNA_normalizer/utils.py
+RNA_normalizer.egg-info/PKG-INFO
+RNA_normalizer.egg-info/SOURCES.txt
+RNA_normalizer.egg-info/dependency_links.txt
+RNA_normalizer.egg-info/requires.txt
+RNA_normalizer.egg-info/top_level.txt
+example/example.py

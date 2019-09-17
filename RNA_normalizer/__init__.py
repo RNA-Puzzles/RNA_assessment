@@ -25,9 +25,10 @@ import os
 
 from Bio.PDB import *
 
-import msgs,math,numpy
-import mcannotate
-import utils
+from .msgs import *
+from .mcannotate import *
+#'from .utils import *
+from .extract import *
 
 BIN_DIR=os.getcwd()
 # from: http://www.cs.princeton.edu/introcs/21function/ErrorFunction.java.html
@@ -125,7 +126,7 @@ class PDBNormalizer:
 			#~ self.show_err( "Missing 'MODEL' declaration." )
 		
 		if( self._in_atom ):
-			msgs.show( "Warning", "Missing 'TER' declaration." )
+			show( "Warning", "Missing 'TER' declaration." )
 			#~ self.show_err( "Missing 'TER' declaration." )
 		self._in_model = False
 		self._in_atom = False
@@ -204,7 +205,7 @@ class PDBNormalizer:
 		return "ATOM  %5s  %3s%s%3s %s%4d%s   %8s%8s%8s%6s%6s		  %2s%2s" %(serial, name, altLoc, resName, chainID, resSeq, iCode, x, y, z, occupancy, tempFactor, element, charge)
 
 	def show_err( self, msg ):
-		msgs.show( "ERROR", "Line %d: %s\n" %(self._row_count, msg) )
+		show( "ERROR", "Line %d: %s\n" %(self._row_count, msg) )
 		self._ok = False
 
 	def _load_res_list(self, fres_list):
@@ -293,7 +294,7 @@ class PDBStruct(object):
 			# "PAIR_2D", "PAIR_3D", "STAK": returns the interactions of the specified type
 			return filter( lambda x: x[0] == type, self._interactions )
 		else:
-			msgs.show( "FATAL", "Wrong interaction type '%s' expected: 'ALL', 'PAIR', 'PAIR_2D', 'PAIR_3D' or 'STACK'" %type)
+			show( "FATAL", "Wrong interaction type '%s' expected: 'ALL', 'PAIR', 'PAIR_2D', 'PAIR_3D' or 'STACK'" %type)
 	
 	# --- properties ---
 	def struct_get(self):
@@ -341,7 +342,7 @@ class PDBStruct(object):
 		self._struct = parser.get_structure( "struct", self._pdb_file )
 		
 		if( len(self._struct) > 1 ):
-			msgs.show( "WARNING", "%d models found. Only the first will be used!" %(len(self._struct)) )
+			show( "WARNING", "%d models found. Only the first will be used!" %(len(self._struct)) )
 
 		self._res_list = []
 		self._res_seq = []
@@ -372,7 +373,7 @@ class PDBStruct(object):
 		
 		for entry in entries:
 			if( len(entry) != 3 ):
-				msgs.show( "ERROR", "Bad index entry: '%s'" %entry)
+				show( "ERROR", "Bad index entry: '%s'" %entry)
 				return( False )
 			
 			chain = entry[0]
@@ -388,11 +389,11 @@ class PDBStruct(object):
 			# get the positions
 			for i in range( ndx, ndx + count ):
 				if( i >= len(self._res_list) ):
-					msgs.show( "ERROR", "Bad count %d in index entry: '%s'" %(count, entry) )
+					show( "ERROR", "Bad count %d in index entry: '%s'" %(count, entry) )
 					return( False )
 				
 				if( self._res_list[i].chain != chain ):
-					msgs.show( "ERROR", "Position %d in index entry: '%s' is outside the chain" %(i, entry) )
+					show( "ERROR", "Position %d in index entry: '%s' is outside the chain" %(i, entry) )
 					return( False )
 				self._res_seq.append( i )
 				
@@ -409,7 +410,7 @@ class PDBStruct(object):
 
 	def _load_annotations_3D(self):
 		self._interactions = []
-		mca = mcannotate.MCAnnotate()
+		mca = MCAnnotate()
 		mca.load( self._pdb_file, os.path.dirname( self._pdb_file ) )
 		#~ print mca.interactions
 		for (type, chain_a, pos_a, nt_a, chain_b, pos_b, nt_b, extra1, extra2, extra3) in mca.interactions:
@@ -448,7 +449,7 @@ class PDBComparer:
 	
 	def mcq(self, f1,f2):
 		cmd='java -cp %s/mcq.ws.client-0.0.1-SNAPSHOT-jar-with-dependencies.jar pl.poznan.put.mcq.ws.client.Global -m %s -t %s >mcq.log'%(BIN_DIR,f1,f2)
-		utils.command(cmd)
+		os.system(cmd)
 		try:
 			v=float(open('mcq.log').read().strip())
 		except Exception:
@@ -505,7 +506,7 @@ class PDBComparer:
 			a = 6.4
 			b = 12.7
 		else:
-			msgs.show( "FATAL", "Wrong p-value parameter '%s'. Expected '+' or '-'" %param )
+			show( "FATAL", "Wrong p-value parameter '%s'. Expected '+' or '-'" %param )
 			
 		RMSD = a * (N ** 0.41) - b
 		
@@ -626,7 +627,7 @@ class PDBComparer:
 					break
 			
 			if( not found ):
-				msgs.show( "WARNING", "Atom %s from residue %s not found in target atom list" %(src_name, src_res.id))
+				show( "WARNING", "Atom %s from residue %s not found in target atom list" %(src_name, src_res.id))
 	
 		return( src_atom_list, trg_atom_list )
 	
@@ -635,7 +636,7 @@ class PDBComparer:
 		trg_atoms = []
 	
 		if( len(src_residues) != len(trg_residues) ):
-			msgs.show( "ERROR", "Different number of residues!" )
+			show( "ERROR", "Different number of residues!" )
 			return( None )
 	
 		for (src_res, trg_res) in zip(src_residues, trg_residues):

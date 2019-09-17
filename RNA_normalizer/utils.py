@@ -21,7 +21,7 @@
 from operator import attrgetter
 import os
 
-import msgs
+from .msgs import *
 
 def command( cmd ):
     ret_code = os.system( cmd )
@@ -53,10 +53,10 @@ def get_index_file( pdb_file, pdb_result_file="" ):
         index_file = pdb_file.replace( ".pdb", ".index" )
     
     if( not os.path.isfile( index_file ) ):
-        msgs.show( "INFO", "INDEX SKIPPED! '%s' skipped for '%s'." %(index_file, pdb_file) )
+        show( "INFO", "INDEX SKIPPED! '%s' skipped for '%s'." %(index_file, pdb_file) )
         index_file= None
     else:
-        msgs.show( "INFO", "INDEX FOUND! '%s' for '%s'." %(index_file, pdb_file) )
+        show( "INFO", "INDEX FOUND! '%s' for '%s'." %(index_file, pdb_file) )
 
     return( index_file )
 
@@ -164,7 +164,7 @@ class Eval:
         elif( attr == "gdt" ):
             self.gdt_rank = rank
         else:
-            msgs.show( "FATAL", "Can't set attribute '%s' in class 'Eval'" %(attr) )
+            show( "FATAL", "Can't set attribute '%s' in class 'Eval'" %(attr) )
     
     def __str__(self):
         s = []

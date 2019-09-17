@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 #
 # Fits two or more molecules
 #
@@ -44,7 +42,7 @@ def ResiduesFromModel( model, res_list ):
                     sub_residues.append( res )
     
             if( len(sub_residues) < count ):
-                print "!!! Error: less than '%d' residues in chain '%s' starting from nt '%d'" %(count, chain, res_id)
+                print("!!! Error: less than '%d' residues in chain '%s' starting from nt '%d'" %(count, chain, res_id))
                 quit()
     
             residues.extend( sub_residues )
@@ -89,7 +87,7 @@ def GetAtomsFromResidues( ref_residues, cmp_residues ):
     j = 0
 
     if( len(ref_residues) != len(cmp_residues) ):
-        print "!! Different number of residues!"
+        print("!! Different number of residues!")
 
     for i in xrange( 0, min(len(ref_residues), len(cmp_residues)) ):
         rr = ref_residues[i]
@@ -133,7 +131,7 @@ def parse_res_list( s ):
         data = piece.split( ":" )
 
         if( len(data) != 3 ):
-            print "Wrong data: %s!" %piece
+            print("Wrong data: %s!" %piece)
             quit()
 
         res_list.append( data )
@@ -157,19 +155,19 @@ def go_fit( pdb_ref, pdb_cmp, res_ref, res_cmp ):
 #
 if __name__ == '__main__':
     if( len(sys.argv) < 6 ):
-        print "\n\n%s" %("- " * 40)
-        print "fit.py - fits to PDB files minimizing the RMSD of selected residues"
-        print "%s\n" %("- " * 40)
-        print "Usage:"
-        print "$ python fit.py <ref. model> <cmp. model> <ref. res. list> <cmp. res. list> <out file>\n"
-        print "<ref. model> - Reference model in PDB format."
-        print "<cmp. model> - Comparing model in PDB format."
-        print "<ref. res. list> - Residues in the ref. model."
-        print "<cmp. res. list> - Residues in the comp. model."
-        print "<out file> - Name of the fitted model file\n"
-        print "Residue lists should be in the following format:\n'chain:res_id:count,...,chain:res_id:count'\n"
-        print "Examples:"
-        print "$ python fit.py AAAA.pdb BBBB.pdb A:1:10,A:21:5,B:2:9 X:1:10 result.pdb\b\b"
+        print("""\n\n%s
+fit.py - fits to PDB files minimizing the RMSD of selected residues
+%s\n
+Usage:
+$ python fit.py <ref. model> <cmp. model> <ref. res. list> <cmp. res. list> <out file>\n
+<ref. model> - Reference model in PDB format.
+<cmp. model> - Comparing model in PDB format.
+<ref. res. list> - Residues in the ref. model.
+<cmp. res. list> - Residues in the comp. model.
+<out file> - Name of the fitted model file\n
+Residue lists should be in the following format:\n'chain:res_id:count,...,chain:res_id:count'\n
+Examples:
+$ python fit.py AAAA.pdb BBBB.pdb A:1:10,A:21:5,B:2:9 X:1:10 result.pdb\b\b"""%("- " * 40, "- " * 40))
         
         quit()
     
@@ -178,4 +176,4 @@ if __name__ == '__main__':
     if( sys.argv[5] != "-" ):
         WritePDB( sf, sys.argv[5] )
     
-    print "RMSD: %s vs %s = %f" %(os.path.basename( sys.argv[1]), os.path.basename( sys.argv[2]), rmsd )
+    print("RMSD: %s vs %s = %f" %(os.path.basename( sys.argv[1]), os.path.basename( sys.argv[2]), rmsd ))
