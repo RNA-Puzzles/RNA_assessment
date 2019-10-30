@@ -9,7 +9,7 @@ print(find_packages())
 
 setup(
         name='RNA_normalizer',
-        version='0.0.1',
+        version='0.0.2',
         description='Normalize RNA pdb structures',
         long_description=readme(),
         long_description_content_type='text/markdown',

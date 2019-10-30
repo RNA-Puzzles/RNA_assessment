@@ -289,10 +289,10 @@ class PDBStruct(object):
 			return self._interactions
 		elif( type in ("PAIR") ):
 			# "PAIR": returns all pairs irrespective of their type
-			return filter( lambda x: x[0] in ("PAIR_2D", "PAIR_3D"), self._interactions )
+			return list(filter( lambda x: x[0] in ("PAIR_2D", "PAIR_3D"), self._interactions ))
 		elif( type in ("PAIR_2D", "PAIR_3D", "STACK") ):
 			# "PAIR_2D", "PAIR_3D", "STAK": returns the interactions of the specified type
-			return filter( lambda x: x[0] == type, self._interactions )
+			return list(filter( lambda x: x[0] == type, self._interactions ))
 		else:
 			show( "FATAL", "Wrong interaction type '%s' expected: 'ALL', 'PAIR', 'PAIR_2D', 'PAIR_3D' or 'STACK'" %type)
 	
@@ -607,8 +607,8 @@ class PDBComparer:
 		src_atom_list = []
 		trg_atom_list = []
 		
-		src_atom_list_tmp = filter( lambda a: a.get_name() in atom_list, src_res )
-		trg_atom_list_tmp = filter( lambda a: a.get_name() in atom_list, trg_res )
+		src_atom_list_tmp = list(filter( lambda a: a.get_name() in atom_list, src_res ))
+		trg_atom_list_tmp = list(filter( lambda a: a.get_name() in atom_list, trg_res ))
 		
 		# for each atom in reference
 		for src_atom in src_atom_list_tmp:
@@ -628,7 +628,6 @@ class PDBComparer:
 			
 			if( not found ):
 				show( "WARNING", "Atom %s from residue %s not found in target atom list" %(src_name, src_res.id))
-	
 		return( src_atom_list, trg_atom_list )
 	
 	def _get_atoms_struct( self, atom_list, src_residues, trg_residues ):
@@ -644,7 +643,7 @@ class PDBComparer:
 			
 			src_atoms.extend( sa )
 			trg_atoms.extend( ta )
-	
+		#'print('%d %d'%(len(src_atoms),len(trg_atoms)))
 		return( src_atoms, trg_atoms )
 	
 	def _build_dp_alignments(self, src_struct, trg_struct):

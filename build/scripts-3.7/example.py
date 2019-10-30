@@ -21,9 +21,7 @@
 
 import sys,os
 
-import RNA_normalier as pdb_utils
-import utils
-import extract
+import RNA_normalizer
 
 from operator import attrgetter
 
@@ -35,7 +33,7 @@ def CleanFormat(f):
 	os.system( "dos2unix -q %s" %f )
 
 def normalize_structure(struct, out_file = None, index_file=None, extract_file = None):
-	pdb_normalizer = pdb_utils.PDBNormalizer( RESIDUES_LIST, ATOMS_LIST )
+	pdb_normalizer = RNA_normalizer.PDBNormalizer( RESIDUES_LIST, ATOMS_LIST )
 	ok = pdb_normalizer.parse( struct, out_file )
 	if not ok:
 		sys.stderr.write("ERROR: structure not normalized!\n")
@@ -48,11 +46,11 @@ def normalize_structure(struct, out_file = None, index_file=None, extract_file =
 
 # PVALUE set according to Hajdin et al., RNA (7) 16, 2010, either "+" or "-"
 def calc_RMSD(native_file, native_index, prediction_file, prediction_index, PVALUE = "-"):
-	res_struct = pdb_utils.PDBStruct()
+	res_struct = RNA_normalizer.PDBStruct()
 	res_struct.load( native_file, native_index )
 	res_raw_seq = res_struct.raw_sequence()
 	
-	sol_struct = pdb_utils.PDBStruct()
+	sol_struct = RNA_normalizer.PDBStruct()
 	sol_struct.load( prediction_file, prediction_index )
 	sol_raw_seq = sol_struct.raw_sequence()
 	
@@ -62,7 +60,7 @@ def calc_RMSD(native_file, native_index, prediction_file, prediction_index, PVAL
 		sys.stderr.write("DATA Result sequence   --> '%s'\n" %res_raw_seq )
 		return(-1)
 	# computes the RMSD
-	comparer = pdb_utils.PDBComparer()
+	comparer = RNA_normalizer.PDBComparer()
 	rmsd = comparer.rmsd( sol_struct, res_struct )
 	sys.stderr.write("INFO Partial RMSD --> %f\n" %rmsd )
 	pvalue = comparer.pvalue( rmsd, len(sol_raw_seq), PVALUE )
@@ -70,11 +68,11 @@ def calc_RMSD(native_file, native_index, prediction_file, prediction_index, PVAL
 	return(rmsd, pvalue)
 
 def InteractionNetworkFidelity(native_file, native_index, prediction_file, prediction_index):
-	res_struct = pdb_utils.PDBStruct()
+	res_struct = RNA_normalizer.PDBStruct()
 	res_struct.load( native_file, native_index )
 	res_raw_seq = res_struct.raw_sequence()
 	
-	sol_struct = pdb_utils.PDBStruct()
+	sol_struct = RNA_normalizer.PDBStruct()
 	sol_struct.load( prediction_file, prediction_index )
 	sol_raw_seq = sol_struct.raw_sequence()
 	
@@ -84,7 +82,7 @@ def InteractionNetworkFidelity(native_file, native_index, prediction_file, predi
 		sys.stderr.write("DATA Result sequence   --> '%s'\n" %res_raw_seq )
 		return(-1)
 	# computes the RMSD
-	comparer = pdb_utils.PDBComparer()
+	comparer = RNA_normalizer.PDBComparer()
 	rmsd = comparer.rmsd( sol_struct, res_struct )
 	INF_ALL = comparer.INF( sol_struct, res_struct, type="ALL" )
 	DI_ALL = rmsd / INF_ALL
