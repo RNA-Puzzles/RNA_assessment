@@ -4,7 +4,7 @@
 This git includes:  
 
 * an RNA structure normalization tool used in RNA-Puzzles.
-* the RNA 3D structure comparison metrics used in RNA-Puzzles assessment, including RMSD (all atom), P value, Interaction Network Fidelity and Deformation Index. 
+* the RNA 3D structure comparison metrics used in RNA-Puzzles assessment, including RMSD (all-atom), P value, Interaction Network Fidelity and Deformation Index. 
 
 ## Installation
 To install the package:    
@@ -16,9 +16,38 @@ To install the package:
 ## Dependency
 This package depends on `biopython`.     
 To install: `pip install biopython`   
+OpenStructure for lDDT calculations.
 
 If need to calculate the Interaction Network Fidelity, it needs to call [`MC-annotate`](https://major.iric.ca/MajorLabEn/MC-Tools.html).    
-Please download the binary excution from the website and coordinate the directory for it at the top line `MCAnnotate_bin=` of the mcannotate.py script.    
+Please download the binary execution from the website and coordinate the directory for it at the top line `MCAnnotate_bin=` of the mcannotate.py script. 
+
+If need to calculate the Local Distance Difference Test (lDDT), it needs to call OpenStructure (https://openstructure.org/download).    
+
+If need to calculate the Atomic Rotationally Equivariant Scorer (ARES), it needs to call ARES (https://www.science.org/doi/10.1126/science.abe5650)
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        .
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        .   
 
  
 

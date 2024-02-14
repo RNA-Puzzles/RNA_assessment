@@ -14,7 +14,7 @@ class MySelect(Select):
             res_id = int(res_data[1])
             count = int(res_data[2])
 
-            for i in xrange( 0, count ):
+            for i in range( 0, count ):
                 self.res_list.append( "%s|%s" %(chain, str(res_id+i)) )
 
     def accept_residue(self, residue):
