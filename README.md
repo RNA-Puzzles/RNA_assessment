@@ -27,29 +27,7 @@ If need to calculate the Atomic Rotationally Equivariant Scorer (ARES), it needs
         
         
         
-        
-        
-        
-        
-        
-        
-        .
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        .   
 
- 
 
 ## how to use
 A detailed introduction can be found in the example [notebook](https://github.com/RNA-Puzzles/RNA_assessment/blob/master/example.ipynb) or the example [script](https://github.com/RNA-Puzzles/RNA_assessment/blob/master/example/example.py). 
