@@ -22,6 +22,8 @@ If need to calculate the Interaction Network Fidelity, it needs to call [`MC-ann
 Please download the binary execution from the website and coordinate the directory for it at the top line `MCAnnotate_bin=` of the mcannotate.py script. 
 
 If need to calculate the Local Distance Difference Test (lDDT), it needs to call OpenStructure (https://openstructure.org/download).    
+The lddt folder used in the current script is at the following link, which needs to be fetched and extracted in the same directory as example.ipynb
+https://drive.google.com/drive/folders/1ZuugpvBi90LG9nW3RZ9BIbxOMDUqxfmw?usp=sharing
 
 If need to calculate the Atomic Rotationally Equivariant Scorer (ARES), it needs to call ARES (https://www.science.org/doi/10.1126/science.abe5650)
         
