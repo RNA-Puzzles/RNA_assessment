@@ -14,8 +14,10 @@ To install the package:
 
 
 ## Dependency
-This package depends on `biopython`.     
-To install: `pip install biopython`   
+This package depends on `biopython`, `rna-tools`   
+To install:   
+`pip install biopython`，  
+`pip install rna-tools`,  
 OpenStructure for lDDT calculations.
 
 If need to calculate the Interaction Network Fidelity, it needs to call [`MC-annotate`](https://major.iric.ca/MajorLabEn/MC-Tools.html).    
