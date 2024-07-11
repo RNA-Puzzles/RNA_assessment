@@ -28,14 +28,32 @@ The lddt folder used in the current script is in [Google Driver](https://drive.g
 
 
 If need to calculate the Atomic Rotationally Equivariant Scorer (ARES), it needs to call [ARES](https://www.science.org/doi/10.1126/science.abe5650)
-        
-        
-        
 
+If need to calculate the Clash score, it needs to call [MolProbity](http://molprobity.biochem.duke.edu/)
+        
+         
+# Repository Structure
+This repository contains the codes necessary to replicate all figures from Puzzles Round V. It includes:
 
-## how to use
+- `The figures_reproducibility.ipynb notebook` : this file can generate all the figures found in the Puzzles, with scores holding the original data for the figures. For details on how to generate data using various metrics, please refer to https://github.com/RNA-Puzzles/RNA_assessment.
+- `data`: This folder contains the input files necessary for structure normalization.
+- `example`: This folder contains the input and output files for example.ipynb/example.py.
+- `RNA_normalizer or RNA_normalizer.egg-info or build`: This folder contains the packaged scripts imported in example.ipynb/example.py
+- `example.py or example.ipynb`: The folder contains example.py or example.ipynb, which are specific runnable examples of Python scripts or Jupyter notebooks.
+
+# how to use
 A detailed introduction can be found in the example [notebook](https://github.com/RNA-Puzzles/RNA_assessment/blob/master/example.ipynb) or the example [script](https://github.com/RNA-Puzzles/RNA_assessment/blob/master/example/example.py). 
 
-## citation
+
+# Citation
+For citation and further information please refer to the preprint:
+
+Fan, B. et al. RNA-Puzzles Round V: Blind predictions of 23 RNA structures. Preprint.
+
+Thank you for your interest in our work. We hope you find the code and resources provided here useful in reproducing and building upon the findings of the RNA-Puzzles Round V.
+
 Hajdin et al., RNA (7) 16, 2010  
 RNA. 2009 Oct; 15(10): 1875–1885.
+
+# Issues
+If you encounter any issues or have questions about the code or analysis, please open an issue on the GitHub repository.
