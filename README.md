@@ -27,7 +27,13 @@ If need to calculate the Local Distance Difference Test (lDDT), it needs to call
 The lddt folder used in the current script is in [Google Driver](https://drive.google.com/drive/folders/1ZuugpvBi90LG9nW3RZ9BIbxOMDUqxfmw?usp=sharing), which needs to be fetched and extracted in the same directory as example.ipynb
 
 
-If need to calculate the Atomic Rotationally Equivariant Scorer (ARES), it needs to call [ARES](https://www.science.org/doi/10.1126/science.abe5650)
+If need to calculate the Atomic Rotationally Equivariant Scorer (ARES), it needs to call [ARES](https://www.science.org/doi/10.1126/science.abe5650
+        
+        
+        
+        
+        
+        )
 
 If need to calculate the Clash score, it needs to call [MolProbity](http://molprobity.biochem.duke.edu/)
         
@@ -46,9 +52,9 @@ A detailed introduction can be found in the example [notebook](https://github.co
 
 
 # Citation
-For citation and further information please refer to the preprint:
+For citation and further information, please refer to the following:
 
-Fan, B. et al. RNA-Puzzles Round V: Blind predictions of 23 RNA structures. Preprint.
+Fan, B. et al. RNA-Puzzles Round V: Blind predictions of 23 RNA structures. 2024. doi:10.1038/s41592-024-02543-9.
 
 Thank you for your interest in our work. We hope you find the code and resources provided here useful in reproducing and building upon the findings of the RNA-Puzzles Round V.
 
