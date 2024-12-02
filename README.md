@@ -46,9 +46,9 @@ A detailed introduction can be found in the example [notebook](https://github.co
 
 
 # Citation
-For citation and further information please refer to the preprint:
+For citation and further information, please refer to the following:
 
-Fan, B. et al. RNA-Puzzles Round V: Blind predictions of 23 RNA structures. Preprint.
+Fan, B. et al. RNA-Puzzles Round V: Blind predictions of 23 RNA structures. 2024. doi:10.1038/s41592-024-02543-9.
 
 Thank you for your interest in our work. We hope you find the code and resources provided here useful in reproducing and building upon the findings of the RNA-Puzzles Round V.
 
